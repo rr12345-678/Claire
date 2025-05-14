@@ -1,74 +1,91 @@
-/* 基础样式 */
+/* 全局样式 */
 body {
-    font-family: '楷体', serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
-    scroll-behavior: smooth;
-}
-
-.container {
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1200px;
+  font-family: 楷体;
+  margin: 0;
+  padding: 0;
+  background-color: [主色调(59)对应的实际颜色值，需明确具体的颜色格式如rgb、hex等，此处假设hex格式为#3B3B3B（你可替换）];
+  color: [辅助色(66)对应的实际颜色值，同样假设hex格式为#424242（你可替换）];
+  overflow-x: hidden; /* 防止水平滚动条出现 */
 }
 
 /* 导航栏样式 */
 .navbar {
-    background-color: #3b3b3b;
-    color: #ffffff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+  background-color: baby pink;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
 }
 
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
 }
 
-.navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+.navbar ul li {
+  margin: 0;
 }
 
-.navbar .nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.navbar .nav-links li {
-    margin: 0 1rem;
-}
-
-.navbar .nav-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.navbar .nav-links a:hover {
-    color: #4caf50;
+.navbar ul li a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* 首屏展示样式 */
-.hero {
-    background-color: #3b3b3b;
-    color: #ffffff;
-    text-align: center;
-    padding: 5rem 0;
+.intro-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+/* 各内容板块通用样式 */
+.content-section {
+  padding: 50px;
+  margin: 50px 0;
 }
 
-.hero p {
-    font-size: 1.5rem;
+.section-title {
+  font-family: 楷体;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* 项目展示图片样式 */
+.project-img {
+  width: 300px;
+  height: auto;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease; /* 简单动画效果，鼠标悬停放大 */
+}
+
+.project-img:hover {
+  transform: scale(1.1);
+}
+
+/* 页脚样式 */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ccc; /* 页脚背景色可按需调整 */
+}
+
+/* 响应式设计，平板和手机端样式调整示例 */
+@media screen and (max-width: 768px) {
+.navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+.project-img {
+    width: 100%;
+  }
 }
